@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lading View Controller-->
+        <scene sceneID="rDv-tR-WUG">
+            <objects>
+                <viewController storyboardIdentifier="LandingViewController" id="oib-2d-hNv" customClass="LadingViewController" customModule="prueba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qu2-3c-egY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZl-Gt-Yen">
+                                <rect key="frame" x="30" y="144" width="354" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxK-r6-wMk">
+                                <rect key="frame" x="192" y="244" width="30" height="30"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="oib-2d-hNv" eventType="touchUpInside" id="JGT-Pb-IT4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Kb-hg-rhH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wxK-r6-wMk" firstAttribute="centerX" secondItem="Qu2-3c-egY" secondAttribute="centerX" id="0dJ-Wl-G6N"/>
+                            <constraint firstItem="bZl-Gt-Yen" firstAttribute="top" secondItem="8Kb-hg-rhH" secondAttribute="top" constant="100" id="Iem-SB-JvJ"/>
+                            <constraint firstItem="wxK-r6-wMk" firstAttribute="top" secondItem="bZl-Gt-Yen" secondAttribute="bottom" constant="100" id="dVn-kt-WZj"/>
+                            <constraint firstItem="bZl-Gt-Yen" firstAttribute="leading" secondItem="8Kb-hg-rhH" secondAttribute="leading" constant="30" id="fPl-VE-muq"/>
+                            <constraint firstItem="8Kb-hg-rhH" firstAttribute="trailing" secondItem="bZl-Gt-Yen" secondAttribute="trailing" constant="30" id="kXo-zV-aSS"/>
+                            <constraint firstItem="8Kb-hg-rhH" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wxK-r6-wMk" secondAttribute="bottom" constant="30" id="wGC-mX-Nxb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="wxK-r6-wMk" id="XRp-Og-CjS"/>
+                        <outlet property="titleLabel" destination="bZl-Gt-Yen" id="bwi-XN-zD8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cnK-Wu-FLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-348" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
