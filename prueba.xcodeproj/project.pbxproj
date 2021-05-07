@@ -13,6 +13,8 @@
 		C05CD47B26447FE90097E600 /* WordSearcherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05CD47A26447FE90097E600 /* WordSearcherManager.swift */; };
 		C05CD48026447FFB0097E600 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05CD47F26447FFB0097E600 /* LandingViewModel.swift */; };
 		C05CD485264480330097E600 /* WordFoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05CD484264480330097E600 /* WordFoundModel.swift */; };
+		C05CD48A2644876E0097E600 /* UploadDocumentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05CD4892644876E0097E600 /* UploadDocumentsViewModel.swift */; };
+		C05CD48F264487820097E600 /* UploadDocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05CD48E264487820097E600 /* UploadDocumentsViewController.swift */; };
 		C06DA7942641EC070021B8CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DA7932641EC070021B8CE /* AppDelegate.swift */; };
 		C06DA7962641EC070021B8CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DA7952641EC070021B8CE /* SceneDelegate.swift */; };
 		C06DA7982641EC070021B8CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DA7972641EC070021B8CE /* ViewController.swift */; };
@@ -57,6 +59,8 @@
 		C05CD47A26447FE90097E600 /* WordSearcherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSearcherManager.swift; sourceTree = "<group>"; };
 		C05CD47F26447FFB0097E600 /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
 		C05CD484264480330097E600 /* WordFoundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordFoundModel.swift; sourceTree = "<group>"; };
+		C05CD4892644876E0097E600 /* UploadDocumentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDocumentsViewModel.swift; sourceTree = "<group>"; };
+		C05CD48E264487820097E600 /* UploadDocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDocumentsViewController.swift; sourceTree = "<group>"; };
 		C06DA7902641EC070021B8CE /* prueba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prueba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06DA7932641EC070021B8CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C06DA7952641EC070021B8CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			children = (
 				C05CD46E26447EA30097E600 /* Storyboard */,
 				C05CD47526447FD40097E600 /* LadingViewController.swift */,
+				C05CD48E264487820097E600 /* UploadDocumentsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			children = (
 				C05CD46D26447E990097E600 /* Manager */,
 				C05CD47F26447FFB0097E600 /* LandingViewModel.swift */,
+				C05CD4892644876E0097E600 /* UploadDocumentsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -438,9 +444,11 @@
 				C06DA7942641EC070021B8CE /* AppDelegate.swift in Sources */,
 				C05CD47B26447FE90097E600 /* WordSearcherManager.swift in Sources */,
 				C06DA7962641EC070021B8CE /* SceneDelegate.swift in Sources */,
+				C05CD48A2644876E0097E600 /* UploadDocumentsViewModel.swift in Sources */,
 				C05CD48026447FFB0097E600 /* LandingViewModel.swift in Sources */,
 				C05CD485264480330097E600 /* WordFoundModel.swift in Sources */,
 				C05CD47626447FD40097E600 /* LadingViewController.swift in Sources */,
+				C05CD48F264487820097E600 /* UploadDocumentsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

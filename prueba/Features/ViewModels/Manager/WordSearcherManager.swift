@@ -7,6 +7,10 @@
 
 import UIKit
 
-class WordSearcherManager: NSObject {
+protocol WordSearcherRelationshipProtocol: class {
+    func configureViewModel(withManager manager: WordSearcherManager)
+}
+
+class WordSearcherManager {
 
 }
