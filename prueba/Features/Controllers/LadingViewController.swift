@@ -23,6 +23,8 @@ class LadingViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
+        let viewController = UIStoryboard(name: "WordSearcherStoryboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "UploadDocumentsViewController")
         
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
