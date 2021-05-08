@@ -34,44 +34,22 @@
                                     <action selector="uploadDocumentsBtnPressed:" destination="oiq-xA-cy7" eventType="touchUpInside" id="T3t-1I-hDT"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dez-XI-bBm">
-                                <rect key="frame" x="20" y="224" width="374" height="472"/>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xg-Xh-xUv" userLabel="ContinueButton">
-                                <rect key="frame" x="0.0" y="806" width="414" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="nsv-En-JCZ"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="continueBtnPressed:" destination="oiq-xA-cy7" eventType="touchUpInside" id="X2B-Kt-yeu"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VGF-o0-AiD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VGF-o0-AiD" firstAttribute="bottom" secondItem="1Xg-Xh-xUv" secondAttribute="bottom" id="2Qi-2B-HcB"/>
                             <constraint firstAttribute="trailing" secondItem="Sgi-ri-d3U" secondAttribute="trailing" constant="20" id="9hr-Ts-3Wq"/>
-                            <constraint firstItem="dez-XI-bBm" firstAttribute="centerX" secondItem="Sju-hy-ugj" secondAttribute="centerX" id="BzU-2G-kNJ"/>
                             <constraint firstItem="MJR-Q0-Fzg" firstAttribute="leading" secondItem="VGF-o0-AiD" secondAttribute="leading" constant="20" id="GJq-Jo-W4h"/>
                             <constraint firstItem="VGF-o0-AiD" firstAttribute="trailing" secondItem="MJR-Q0-Fzg" secondAttribute="trailing" constant="20" id="GYI-fc-upC"/>
-                            <constraint firstItem="dez-XI-bBm" firstAttribute="top" secondItem="P73-5v-1vO" secondAttribute="bottom" constant="20" id="HBD-Lw-vfK"/>
-                            <constraint firstItem="VGF-o0-AiD" firstAttribute="trailing" secondItem="1Xg-Xh-xUv" secondAttribute="trailing" id="JLH-dG-ybK"/>
-                            <constraint firstItem="dez-XI-bBm" firstAttribute="leading" secondItem="VGF-o0-AiD" secondAttribute="leading" constant="20" id="JjM-du-ON8"/>
-                            <constraint firstItem="VGF-o0-AiD" firstAttribute="trailing" secondItem="dez-XI-bBm" secondAttribute="trailing" constant="20" id="OhH-RP-7PR"/>
                             <constraint firstItem="Sgi-ri-d3U" firstAttribute="top" secondItem="MJR-Q0-Fzg" secondAttribute="bottom" constant="50" id="ciO-Mr-0Pm"/>
                             <constraint firstItem="P73-5v-1vO" firstAttribute="top" secondItem="Sgi-ri-d3U" secondAttribute="bottom" constant="60" id="eb0-Cn-ei2"/>
                             <constraint firstItem="MJR-Q0-Fzg" firstAttribute="top" secondItem="VGF-o0-AiD" secondAttribute="top" constant="20" id="ey6-8k-d4X"/>
-                            <constraint firstItem="1Xg-Xh-xUv" firstAttribute="leading" secondItem="VGF-o0-AiD" secondAttribute="leading" id="jAp-oa-PTs"/>
-                            <constraint firstAttribute="bottom" secondItem="dez-XI-bBm" secondAttribute="bottom" priority="250" constant="200" id="r6u-nA-pRo"/>
                             <constraint firstItem="P73-5v-1vO" firstAttribute="centerX" secondItem="Sju-hy-ugj" secondAttribute="centerX" id="s4v-nd-eEM"/>
                             <constraint firstItem="Sgi-ri-d3U" firstAttribute="leading" secondItem="Sju-hy-ugj" secondAttribute="leading" constant="20" id="vZV-Sb-6B8"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="continueBtn" destination="1Xg-Xh-xUv" id="MPH-yT-KDj"/>
                         <outlet property="descriptionLabel" destination="Sgi-ri-d3U" id="ljd-Zb-GsS"/>
-                        <outlet property="stackView" destination="dez-XI-bBm" id="4kt-AN-TvM"/>
                         <outlet property="titleLabel" destination="MJR-Q0-Fzg" id="Kbe-01-f8A"/>
                         <outlet property="uploadDocumentsBtn" destination="P73-5v-1vO" id="AxH-Xu-Mdu"/>
                     </connections>

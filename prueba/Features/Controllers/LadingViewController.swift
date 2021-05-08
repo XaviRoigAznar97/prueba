@@ -23,8 +23,13 @@ class LadingViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
-        let viewController = UIStoryboard(name: "WordSearcherStoryboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "UploadDocumentsViewController")
+        if let viewController = UIStoryboard(name: "WordSearcherStoryboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "UploadDocumentsViewController") as? UploadDocumentsViewController {
+            
+            viewController.configureViewModel(withManager: WordSearcherManager())
+                
+            self.navigationController?.pushViewController(viewController, animated: true)
         
-        self.navigationController?.pushViewController(viewController, animated: true)
+        }
+        
     }
 }

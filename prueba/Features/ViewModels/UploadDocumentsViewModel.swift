@@ -7,9 +7,9 @@
 
 import UIKit
 
-class UploadDocumentsViewModel: NSObject {
+class UploadDocumentsViewModel {
 
-    weak var manager: WordSearcherManager?
+    var manager: WordSearcherManager?
     
     func getTitleText()-> String {
         return "Selección de archivos"
@@ -20,7 +20,7 @@ class UploadDocumentsViewModel: NSObject {
     }
     
     func getUploadBtnTitle()-> String {
-        return "Seleccionar"
+        return "Adjuntar documentos"
     }
     
     func getContinueBtnTitle()-> String {
@@ -30,5 +30,9 @@ class UploadDocumentsViewModel: NSObject {
     func getStackViewTitle()-> String {
         return "Documentos seleccionados"
     }
-
+    
+    func processDocumentsSelected(documentText: String, documentName: String, success succeed: (@escaping ()-> Void)) {
+        manager?.processDocumentText(documentText: documentText, documentName: documentName, success: succeed)
+    }
+    
 }
