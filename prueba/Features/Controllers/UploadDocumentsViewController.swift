@@ -58,8 +58,17 @@ extension UploadDocumentsViewController: UIDocumentPickerDelegate {
                         viewModel.processDocumentsSelected(documentText: documentText, documentName: String(documentName)) { [weak self] in
                             
                             DispatchQueue.main.async {
+                                guard let strongSelf = self else { return }
                                 
                                 //MARK: - Navigate to next page
+                                
+                                if let resultViewController = ResultViewController.storyboardInstance(), let manager = strongSelf.viewModel.manager {
+                                    
+                                    resultViewController.configureViewModel(withManager: manager)
+                                    
+                                    self?.navigationController?.pushViewController(resultViewController, animated: true)
+                                    
+                                }
                                 
                             }
                         

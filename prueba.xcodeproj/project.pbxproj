@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A6CC1C3C4F91F9E7409BBC64 /* Pods_prueba_pruebaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CA04E7C268521B27BA1F03 /* Pods_prueba_pruebaUITests.framework */; };
+		C04E85892646E1AB007EDA86 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E85882646E1AB007EDA86 /* ResultViewController.swift */; };
+		C04E858E2646E1BF007EDA86 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E858D2646E1BF007EDA86 /* ResultViewModel.swift */; };
 		C05CD47126447FB90097E600 /* WordSearcherStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05CD47026447FB90097E600 /* WordSearcherStoryboard.storyboard */; };
 		C05CD47626447FD40097E600 /* LadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05CD47526447FD40097E600 /* LadingViewController.swift */; };
 		C05CD47B26447FE90097E600 /* WordSearcherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05CD47A26447FE90097E600 /* WordSearcherManager.swift */; };
@@ -54,6 +56,8 @@
 		9C98B806AA4D3618BEBFC50A /* Pods-pruebaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pruebaTests.debug.xcconfig"; path = "Target Support Files/Pods-pruebaTests/Pods-pruebaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1FB3982FF5E9257C532A4C7 /* Pods-prueba-pruebaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prueba-pruebaUITests.release.xcconfig"; path = "Target Support Files/Pods-prueba-pruebaUITests/Pods-prueba-pruebaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B9CA04E7C268521B27BA1F03 /* Pods_prueba_pruebaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_prueba_pruebaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04E85882646E1AB007EDA86 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		C04E858D2646E1BF007EDA86 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		C05CD47026447FB90097E600 /* WordSearcherStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WordSearcherStoryboard.storyboard; sourceTree = "<group>"; };
 		C05CD47526447FD40097E600 /* LadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadingViewController.swift; sourceTree = "<group>"; };
 		C05CD47A26447FE90097E600 /* WordSearcherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSearcherManager.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				C05CD46E26447EA30097E600 /* Storyboard */,
 				C05CD47526447FD40097E600 /* LadingViewController.swift */,
 				C05CD48E264487820097E600 /* UploadDocumentsViewController.swift */,
+				C04E85882646E1AB007EDA86 /* ResultViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 				C05CD46D26447E990097E600 /* Manager */,
 				C05CD47F26447FFB0097E600 /* LandingViewModel.swift */,
 				C05CD4892644876E0097E600 /* UploadDocumentsViewModel.swift */,
+				C04E858D2646E1BF007EDA86 /* ResultViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -443,8 +449,10 @@
 				C06DA7982641EC070021B8CE /* ViewController.swift in Sources */,
 				C06DA7942641EC070021B8CE /* AppDelegate.swift in Sources */,
 				C05CD47B26447FE90097E600 /* WordSearcherManager.swift in Sources */,
+				C04E858E2646E1BF007EDA86 /* ResultViewModel.swift in Sources */,
 				C06DA7962641EC070021B8CE /* SceneDelegate.swift in Sources */,
 				C05CD48A2644876E0097E600 /* UploadDocumentsViewModel.swift in Sources */,
+				C04E85892646E1AB007EDA86 /* ResultViewController.swift in Sources */,
 				C05CD48026447FFB0097E600 /* LandingViewModel.swift in Sources */,
 				C05CD485264480330097E600 /* WordFoundModel.swift in Sources */,
 				C05CD47626447FD40097E600 /* LadingViewController.swift in Sources */,
