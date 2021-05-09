@@ -34,6 +34,8 @@ class UploadDocumentsViewController: UIViewController {
         
         super.viewDidLoad()
         
+        //MARK: - Configure UI
+        
         titleLabel.text = viewModel.getTitleText()
         
         descriptionLabel.text = viewModel.getDescriptionText()
@@ -46,12 +48,18 @@ class UploadDocumentsViewController: UIViewController {
         
         super.viewWillAppear(animated)
         
+        ///MARK: - Reset Manager dictionary when the user is in this page because he/she has to select the file to move to the result page (we do not want to retain earlier results)
+        
         viewModel.manager.reset()
         
     }
     
     @IBAction func uploadDocumentsBtnPressed(_ sender: Any) {
+        
+        //MARK: - Present the picker to allow user files selection
+        
         let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypePlainText as String], in: .import)
+        
         documentPicker.delegate = self
         documentPicker.allowsMultipleSelection = true
         documentPicker.modalPresentationStyle = .fullScreen
@@ -59,15 +67,13 @@ class UploadDocumentsViewController: UIViewController {
         present(documentPicker, animated: true, completion: nil)
     }
     
-    
-    @IBAction func continueBtnPressed(_ sender: Any) {
-        
-    }
 }
 
 extension UploadDocumentsViewController: UIDocumentPickerDelegate {
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        
+        //MARK: - Process the text from each selected file
         
         for url in urls {
             
