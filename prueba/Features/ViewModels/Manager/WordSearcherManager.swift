@@ -11,11 +11,15 @@ class WordSearcherManager {
 
     static let sharedInstance = WordSearcherManager()
     
+    //MARK: - Use a dicitonary because it has a lower cost that and array of models (we can identify the words with the dictionary key)
+    
     fileprivate (set) var wordsFound = [String: WordFoundModel]()
     
     fileprivate (set) var wordsCounter = 0
     
     func reset() {
+        
+        //MARK: - Reset the dictionary and the counter with the words saved from selected files
         
         wordsFound = [String: WordFoundModel]()
         
@@ -27,8 +31,9 @@ class WordSearcherManager {
         
         let fileteredText = documentText.alphanumeric
         
-            
         for (i, word) in fileteredText.enumerated() {
+            
+            //MARK: - Word capitalized to follow a single pattern
             
             let capitalizedWord = word.capitalized
             
@@ -36,9 +41,13 @@ class WordSearcherManager {
             
             if let cachedWordModel = self.wordsFound[capitalizedWord] {
             
+                //MARK: - Increase plus one the counter of the word
+                
                 cachedWordModel.updateCounter()
                 
             } else {
+                
+                //MARK: - Create the pair (key, value) if it does not exist
                 
                 self.wordsFound[capitalizedWord] = wordModel
             
@@ -47,7 +56,10 @@ class WordSearcherManager {
         }
         
         self.wordsCounter += fileteredText.count
+        
     }
+    
+    //MARK: - Create Word Models with the data extracted from the text
     
     private func createWordFoundModel(forWord word: String, inDocument documentName: String, inPosition position: Int)-> WordFoundModel {
         
@@ -58,6 +70,9 @@ class WordSearcherManager {
 }
 
 extension String {
+    
+    //MARK: - Extension that filters only alphanumeric characters
+    
     var alphanumeric: [String] {
         return self.components(separatedBy: CharacterSet.alphanumerics.inverted).filter{ $0.count > 0}
     }
