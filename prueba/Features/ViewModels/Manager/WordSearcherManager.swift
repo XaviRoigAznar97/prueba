@@ -12,46 +12,35 @@ protocol WordSearcherRelationshipProtocol: class {
 }
 
 class WordSearcherManager {
-    
-    static let validCharacters = "012345678"
 
-    fileprivate (set) var rawDocumentsText = [String]()
-    
     fileprivate (set) var wordsFound = [String: WordFoundModel]()
     
-    fileprivate (set) var documentModels = [Any]()
+    fileprivate (set) var wordsCounter = 0
     
-    func setRawDocumentsText(_ text: String) {
-        rawDocumentsText.append(text)
-    }
-    
-    func processDocumentText(documentText: String, documentName: String, success succeed: (@escaping ()-> Void)) {
+    func processDocumentText(documentText: String, documentName: String) {
         
         let fileteredText = documentText.alphanumeric
         
-        DispatchQueue.global().async { [weak self] in
             
-            for (i, word) in fileteredText.enumerated() {
+        for (i, word) in fileteredText.enumerated() {
+            
+            let capitalizedWord = word.capitalized
+            
+            let wordModel = self.createWordFoundModel(forWord: capitalizedWord, inDocument: documentName, inPosition: i + self.wordsCounter)
+            
+            if let cachedWordModel = self.wordsFound[capitalizedWord] {
+            
+                cachedWordModel.updateCounter()
                 
-                let capitalizedWord = word.capitalized
+            } else {
                 
-                let wordModel = self?.createWordFoundModel(forWord: capitalizedWord, inDocument: documentName, inPosition: i)
-                
-                if let cachedWordModel = self?.wordsFound[capitalizedWord] {
-                
-                    cachedWordModel.updateCounter()
-                    
-                } else {
-                    
-                    self?.wordsFound[capitalizedWord] = wordModel
-                
-                }
-                
+                self.wordsFound[capitalizedWord] = wordModel
+            
             }
             
-            succeed()
-            
         }
+        
+        self.wordsCounter += fileteredText.count
     }
     
     private func createWordFoundModel(forWord word: String, inDocument documentName: String, inPosition position: Int)-> WordFoundModel {
@@ -59,6 +48,7 @@ class WordSearcherManager {
         return WordFoundModel(word: word.capitalized, documentName: documentName, position: position)
         
     }
+    
 }
 
 extension String {
