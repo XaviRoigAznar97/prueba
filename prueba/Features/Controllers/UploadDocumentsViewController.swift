@@ -32,11 +32,21 @@ class UploadDocumentsViewController: UIViewController {
         
         super.viewDidLoad()
         
+        self.title = "Word Searcher"
+        
         titleLabel.text = viewModel.getTitleText()
         
         descriptionLabel.text = viewModel.getDescriptionText()
         
         uploadDocumentsBtn.setTitle(viewModel.getUploadBtnTitle(), for: .normal)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        viewModel.manager.reset()
         
     }
     

@@ -32,6 +32,8 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Word Searcher"
+        
         searchBar.delegate = self
         
         configureButtons()
