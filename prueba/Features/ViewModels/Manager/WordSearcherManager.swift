@@ -45,6 +45,14 @@ class WordSearcherManager {
                 
                 cachedWordModel.updateCounter()
                 
+                //MARK: - Add document name if the word appears in more than a single document
+                
+                if !cachedWordModel.documentNames.contains(documentName) {
+                    
+                    cachedWordModel.addDocument(withName: documentName)
+                    
+                }
+                
             } else {
                 
                 //MARK: - Create the pair (key, value) if it does not exist

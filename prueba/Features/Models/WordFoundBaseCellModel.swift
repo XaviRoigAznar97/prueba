@@ -12,6 +12,7 @@ enum WordFoundCellType {
     case header
     case description
     case loading
+    
 }
 
 class WordFoundBaseCellModel {

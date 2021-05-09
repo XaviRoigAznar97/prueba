@@ -267,6 +267,12 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
+        if let cellModel = viewModel.getCellModel(atIndex: indexPath.row), cellModel.documentsName.count > 1 {
+            
+            return 80
+        
+        }
+        
         return 50
         
     }
