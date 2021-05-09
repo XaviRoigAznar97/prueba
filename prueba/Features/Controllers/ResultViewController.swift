@@ -298,9 +298,3 @@ extension ResultViewController: UISearchBarDelegate {
     }
     
 }
-
-extension ResultViewController: WordSearcherRelationshipProtocol {
-    func configureViewModel(withManager manager: WordSearcherManager) {
-        viewModel.manager = manager
-    }
-}

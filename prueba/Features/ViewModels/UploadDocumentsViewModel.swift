@@ -9,7 +9,7 @@ import UIKit
 
 class UploadDocumentsViewModel {
 
-    var manager: WordSearcherManager?
+    var manager = WordSearcherManager.sharedInstance
     
     func getTitleText()-> String {
         return "Selección de archivos"
@@ -32,7 +32,7 @@ class UploadDocumentsViewModel {
     }
     
     func processDocumentsSelected(documentText: String, documentName: String) {
-        manager?.processDocumentText(documentText: documentText, documentName: documentName)
+        manager.processDocumentText(documentText: documentText, documentName: documentName)
     }
     
 }

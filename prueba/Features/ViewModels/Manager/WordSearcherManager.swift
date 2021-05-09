@@ -7,15 +7,21 @@
 
 import UIKit
 
-protocol WordSearcherRelationshipProtocol: class {
-    func configureViewModel(withManager manager: WordSearcherManager)
-}
-
 class WordSearcherManager {
 
+    static let sharedInstance = WordSearcherManager()
+    
     fileprivate (set) var wordsFound = [String: WordFoundModel]()
     
     fileprivate (set) var wordsCounter = 0
+    
+    func reset() {
+        
+        wordsFound = [String: WordFoundModel]()
+        
+        wordsCounter = 0
+        
+    }
     
     func processDocumentText(documentText: String, documentName: String) {
         

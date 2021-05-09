@@ -9,7 +9,7 @@ import UIKit
 
 class ResultViewModel {
 
-    var manager: WordSearcherManager?
+    var manager = WordSearcherManager.sharedInstance
     
     fileprivate (set) var selectedBtnType: ResultPageFilterButtonType?
     
@@ -29,20 +29,27 @@ class ResultViewModel {
     }
     
     func getTotalWordsDescription()-> String {
-        guard let manager = manager else { return "Número total de palabras: 0" }
+        
         return "Número total de palabras: \(manager.wordsCounter.description)"
+        
     }
     
     func getFirstBtnTitle()-> String {
+        
         return "Posición"
+    
     }
     
     func getSecondBtnTitle()-> String {
+    
         return "Alfabéticamente"
+        
     }
     
     func getThirdBtnTitle()-> String {
+        
         return "Aparaciones"
+        
     }
     
     func getHeaderCellModel()-> WordFoundHeaderCellModel {
@@ -50,8 +57,6 @@ class ResultViewModel {
     }
     
     func generateCellModels() {
-        
-        guard let manager = manager else { return }
         
         for (_, wordModel) in manager.wordsFound {
             
@@ -96,8 +101,6 @@ class ResultViewModel {
     }
     
     func createCellModels(withFilteredWords text: String) {
-        
-        guard let manager = manager else { return }
         
         cellModels = []
         
