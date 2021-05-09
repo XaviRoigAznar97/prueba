@@ -18,6 +18,8 @@ class LadingViewController: UIViewController {
         
         super.viewDidLoad()
 
+        //MARK: - Configure UI
+        
         titleLabel.text = viewModel.getTitleLabelText()
         
         button.setTitle(viewModel.getButtonTitle(), for: .normal)
@@ -25,6 +27,8 @@ class LadingViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
+        
+        //MARK: - Navigate to Upload Documents page
         
         if let viewController = UploadDocumentsViewController.storyboardInstance() {
                 
