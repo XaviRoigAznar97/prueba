@@ -324,7 +324,32 @@ extension ResultViewController: UISearchBarDelegate {
         
         if searchText.count == 0 {
             
-            viewModel.recoverTotalCellModels()
+            if let selectedBtnType = viewModel.selectedBtnType {
+                
+                switch selectedBtnType {
+                
+                case .position:
+                    
+                    viewModel.refreshPositionFilteredCellModels()
+                    break
+                    
+                case .alphabetic:
+                    
+                    viewModel.refreshAlphabeticFilteredCellModels()
+                    break
+                    
+                case .appearances:
+                    
+                    viewModel.refreshAppearancesFilteredCellModels()
+                    break
+                    
+                }
+            
+            } else {
+                
+                viewModel.recoverTotalCellModels()
+                
+            }
             
         } else {
         
