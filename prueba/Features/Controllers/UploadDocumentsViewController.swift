@@ -20,6 +20,8 @@ class UploadDocumentsViewController: UIViewController {
         
         if let viewController = UIStoryboard(name: "WordSearcherStoryboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "UploadDocumentsViewController") as? UploadDocumentsViewController {
             
+            viewController.title = "Word Searcher"
+            
             return viewController
             
         }
@@ -31,8 +33,6 @@ class UploadDocumentsViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        self.title = "Word Searcher"
         
         titleLabel.text = viewModel.getTitleText()
         

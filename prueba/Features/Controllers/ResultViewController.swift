@@ -21,6 +21,8 @@ class ResultViewController: UIViewController {
     static func storyboardInstance()-> ResultViewController? {
         if let vC = UIStoryboard(name: "WordSearcherStoryboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
             
+            vC.title = "Word Searcher"
+            
             return vC
             
         }
@@ -31,8 +33,6 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Word Searcher"
         
         searchBar.delegate = self
         
