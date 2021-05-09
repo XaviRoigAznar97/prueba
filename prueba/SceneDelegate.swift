@@ -20,6 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         let navVC = UINavigationController(rootViewController: UIStoryboard(name: "WordSearcherStoryboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "LandingViewController"))
+        
+        navVC.navigationBar.topItem?.title = "Word Searcher"
+        
         window.rootViewController = navVC
         self.window = window
         window.makeKeyAndVisible()
