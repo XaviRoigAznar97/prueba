@@ -82,6 +82,6 @@ extension String {
     //MARK: - Extension that filters only alphanumeric characters
     
     var alphanumeric: [String] {
-        return self.components(separatedBy: CharacterSet.alphanumerics.inverted).filter{ $0.count > 0}
+        return self.components(separatedBy: CharacterSet.alphanumerics.inverted).filter{ $0.count > 1 || ResultViewModel.validSingleChars.contains($0)}
     }
 }
