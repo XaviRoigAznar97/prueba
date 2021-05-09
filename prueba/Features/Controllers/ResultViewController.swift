@@ -187,6 +187,13 @@ class ResultViewController: UIViewController {
             
         }
         
+        
+        if searchBar.text?.count ?? 0 > 0 {
+            
+            viewModel.createCellModels(withFilteredWords: searchBar.text ?? "")
+            
+        }
+        
         tableView.reloadData()
         
     }
@@ -211,6 +218,13 @@ class ResultViewController: UIViewController {
             
         }
         
+        
+        if searchBar.text?.count ?? 0 > 0 {
+            
+            viewModel.createCellModels(withFilteredWords: searchBar.text ?? "")
+            
+        }
+        
         tableView.reloadData()
     }
     
@@ -231,6 +245,12 @@ class ResultViewController: UIViewController {
             viewModel.resetSelectedBtnType()
             
             viewModel.recoverTotalCellModels()
+            
+        }
+        
+        if searchBar.text?.count ?? 0 > 0 {
+            
+            viewModel.createCellModels(withFilteredWords: searchBar.text ?? "")
             
         }
         
@@ -320,7 +340,32 @@ extension ResultViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         
-        viewModel.recoverTotalCellModels()
+        if let selectedBtnType = viewModel.selectedBtnType {
+            
+            switch selectedBtnType {
+            
+            case .position:
+                
+                viewModel.refreshPositionFilteredCellModels()
+                break
+                
+            case .alphabetic:
+                
+                viewModel.refreshAlphabeticFilteredCellModels()
+                break
+                
+            case .appearances:
+                
+                viewModel.refreshAppearancesFilteredCellModels()
+                break
+                
+            }
+        
+        } else {
+            
+            viewModel.recoverTotalCellModels()
+            
+        }
         
         tableView.reloadData()
         

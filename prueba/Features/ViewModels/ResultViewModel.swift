@@ -127,6 +127,30 @@ class ResultViewModel {
             }
             
         }
+        
+        if let selectedBtnType = selectedBtnType {
+            
+            switch selectedBtnType {
+            
+            case .position:
+                
+                refreshPositionFilteredCellModels()
+                break
+                
+            case .alphabetic:
+                
+                refreshAlphabeticFilteredCellModels()
+                break
+                
+            case .appearances:
+            
+                refreshAppearancesFilteredCellModels()
+                break
+            
+            }
+            
+        }
+        
     }
 }
 
