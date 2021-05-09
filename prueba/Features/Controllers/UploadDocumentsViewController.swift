@@ -55,30 +55,23 @@ extension UploadDocumentsViewController: UIDocumentPickerDelegate {
                     
                     if let documentText = String(data: documentData, encoding: .utf8), let documentName = url.absoluteString.split(separator: "/").last {
                     
-                        viewModel.processDocumentsSelected(documentText: documentText, documentName: String(documentName)) { [weak self] in
-                            
-                            DispatchQueue.main.async {
-                                guard let strongSelf = self else { return }
-                                
-                                //MARK: - Navigate to next page
-                                
-                                if let resultViewController = ResultViewController.storyboardInstance(), let manager = strongSelf.viewModel.manager {
-                                    
-                                    resultViewController.configureViewModel(withManager: manager)
-                                    
-                                    self?.navigationController?.pushViewController(resultViewController, animated: true)
-                                    
-                                }
-                                
-                            }
-                        
-                        }
+                        viewModel.processDocumentsSelected(documentText: documentText, documentName: String(documentName))
                         
                     }
                     
                 }
                 
             }
+            
+        }
+        
+        //MARK: - Navigate to next page
+        
+        if let resultViewController = ResultViewController.storyboardInstance(), let manager = self.viewModel.manager {
+            
+            resultViewController.configureViewModel(withManager: manager)
+            
+            self.navigationController?.pushViewController(resultViewController, animated: true)
             
         }
         

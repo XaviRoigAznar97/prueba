@@ -31,8 +31,8 @@ class UploadDocumentsViewModel {
         return "Documentos seleccionados"
     }
     
-    func processDocumentsSelected(documentText: String, documentName: String, success succeed: (@escaping ()-> Void)) {
-        manager?.processDocumentText(documentText: documentText, documentName: documentName, success: succeed)
+    func processDocumentsSelected(documentText: String, documentName: String) {
+        manager?.processDocumentText(documentText: documentText, documentName: documentName)
     }
     
 }
