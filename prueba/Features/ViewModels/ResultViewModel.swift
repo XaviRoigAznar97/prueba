@@ -48,7 +48,7 @@ class ResultViewModel {
     
     func getThirdBtnTitle()-> String {
         
-        return "Aparaciones"
+        return "Apariciones"
         
     }
     
