@@ -16,6 +16,18 @@ class UploadDocumentsViewController: UIViewController {
     
     var viewModel = UploadDocumentsViewModel()
     
+    static func storyboardInstance()-> UploadDocumentsViewController? {
+        
+        if let viewController = UIStoryboard(name: "WordSearcherStoryboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "UploadDocumentsViewController") as? UploadDocumentsViewController {
+            
+            return viewController
+            
+        }
+        
+        return nil
+        
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -67,23 +79,11 @@ extension UploadDocumentsViewController: UIDocumentPickerDelegate {
         
         //MARK: - Navigate to next page
         
-        if let resultViewController = ResultViewController.storyboardInstance(), let manager = self.viewModel.manager {
-            
-            resultViewController.configureViewModel(withManager: manager)
+        if let resultViewController = ResultViewController.storyboardInstance() {
             
             self.navigationController?.pushViewController(resultViewController, animated: true)
             
         }
         
     }
-}
-
-extension UploadDocumentsViewController: WordSearcherRelationshipProtocol {
-    
-    func configureViewModel(withManager manager: WordSearcherManager) {
-        
-        viewModel.manager = manager
-    
-    }
-    
 }

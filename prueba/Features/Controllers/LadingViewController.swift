@@ -15,17 +15,18 @@ class LadingViewController: UIViewController {
     var viewModel = LandingViewModel()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         titleLabel.text = viewModel.getTitleLabelText()
         
         button.setTitle(viewModel.getButtonTitle(), for: .normal)
+        
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
-        if let viewController = UIStoryboard(name: "WordSearcherStoryboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "UploadDocumentsViewController") as? UploadDocumentsViewController {
-            
-            viewController.configureViewModel(withManager: WordSearcherManager())
+        
+        if let viewController = UploadDocumentsViewController.storyboardInstance() {
                 
             self.navigationController?.pushViewController(viewController, animated: true)
         
