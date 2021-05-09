@@ -100,7 +100,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mM5-d8-ef9">
-                                <rect key="frame" x="20" y="210" width="374" height="652"/>
+                                <rect key="frame" x="0.0" y="210" width="414" height="652"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -111,8 +111,8 @@
                             <constraint firstItem="CMt-lb-PgM" firstAttribute="leading" secondItem="lZZ-TK-JKZ" secondAttribute="leading" id="KOr-FZ-9aW"/>
                             <constraint firstItem="lZZ-TK-JKZ" firstAttribute="trailing" secondItem="CMt-lb-PgM" secondAttribute="trailing" id="L1G-lk-N6y"/>
                             <constraint firstItem="lZZ-TK-JKZ" firstAttribute="bottom" secondItem="mM5-d8-ef9" secondAttribute="bottom" id="OvP-X2-jgH"/>
-                            <constraint firstItem="lZZ-TK-JKZ" firstAttribute="trailing" secondItem="mM5-d8-ef9" secondAttribute="trailing" constant="20" id="a5A-Mv-RKr"/>
-                            <constraint firstItem="mM5-d8-ef9" firstAttribute="leading" secondItem="lZZ-TK-JKZ" secondAttribute="leading" constant="20" id="dH7-XX-HsJ"/>
+                            <constraint firstItem="lZZ-TK-JKZ" firstAttribute="trailing" secondItem="mM5-d8-ef9" secondAttribute="trailing" id="a5A-Mv-RKr"/>
+                            <constraint firstItem="mM5-d8-ef9" firstAttribute="leading" secondItem="lZZ-TK-JKZ" secondAttribute="leading" id="dH7-XX-HsJ"/>
                             <constraint firstItem="AVe-OA-JmR" firstAttribute="centerX" secondItem="1ZR-gY-WvN" secondAttribute="centerX" id="ffZ-83-3gp"/>
                             <constraint firstItem="AVe-OA-JmR" firstAttribute="top" secondItem="lZZ-TK-JKZ" secondAttribute="top" constant="20" id="iFV-8d-26b"/>
                             <constraint firstItem="lZZ-TK-JKZ" firstAttribute="trailing" secondItem="G4k-qJ-r1X" secondAttribute="trailing" constant="20" id="irP-aP-PBw"/>

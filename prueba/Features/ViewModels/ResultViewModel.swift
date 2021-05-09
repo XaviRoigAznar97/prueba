@@ -11,7 +11,7 @@ class ResultViewModel {
 
     var manager = WordSearcherManager.sharedInstance
     
-    static var validSingleChars = ["A","E","I","O","U","0","1","2","3","4","5","6","7","8","9"]
+    static let validSingleChars = ["A","E","I","O","U","0","1","2","3","4","5","6","7","8","9"]
     
     fileprivate (set) var selectedBtnType: ResultPageFilterButtonType?
     
