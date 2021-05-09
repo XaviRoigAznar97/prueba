@@ -34,6 +34,8 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: - Configure UI
+        
         searchBar.delegate = self
         
         configureButtons()
@@ -46,6 +48,7 @@ class ResultViewController: UIViewController {
         
     }
     
+    //MARK: - Configure header tableView Buttons
     private func configureButtons() {
         
         firstButton.setTitle(viewModel.getFirstBtnTitle(), for: .normal)
@@ -68,6 +71,8 @@ class ResultViewController: UIViewController {
         
     }
     
+    //MARK: - Configure TableView
+    
     private func configureTableView() {
         
         viewModel.generateCellModels()
@@ -85,6 +90,8 @@ class ResultViewController: UIViewController {
         tableView.reloadData()
         
     }
+    
+    //MARK: - Activate user's selected button
     
     private func activateSelectedButton(_ filterType: ResultPageFilterButtonType?) {
         
@@ -123,6 +130,8 @@ class ResultViewController: UIViewController {
         
     }
     
+    //MARK: - Desactivate the button which was previously activated (if it applies)
+    
     private func desactivateButton(_ filterType: ResultPageFilterButtonType?) {
         
         guard let type = filterType else { return }
@@ -158,6 +167,8 @@ class ResultViewController: UIViewController {
         
     }
     
+    //MARK: - Filter words by position in the text
+    
     @IBAction func firstBtnPressed(_ sender: Any) {
         
         desactivateButton(viewModel.selectedBtnType)
@@ -180,6 +191,8 @@ class ResultViewController: UIViewController {
         
     }
     
+    //MARK: - Filter words alphabetically
+    
     @IBAction func secondBtnPressed(_ sender: Any) {
         
         desactivateButton(viewModel.selectedBtnType)
@@ -200,6 +213,8 @@ class ResultViewController: UIViewController {
         
         tableView.reloadData()
     }
+    
+    //MARK: - Filter words by number of appearances
     
     @IBAction func thirdBtnPressed(_ sender: Any) {
         
@@ -255,6 +270,8 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
             
         } else if let cellModel = viewModel.getCellModel(atIndex: indexPath.row), let cell = tableView.dequeueReusableCell(withIdentifier: "WordFoundDescriptionCell", for: indexPath) as? WordFoundDescriptionTableViewCell {
             
+            //MARK: - Configure the cell with the model create in the manager when it processed the whole words
+            
             cell.configureCell(withModel: cellModel)
             
             return cell
@@ -281,6 +298,8 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ResultViewController: UISearchBarDelegate {
     
+    //MARK: - Filter words by the text introduced by the user in the search bar
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         if searchText.count == 0 {
@@ -296,6 +315,8 @@ extension ResultViewController: UISearchBarDelegate {
         tableView.reloadData()
         
     }
+    
+    //MARK: - Recover the initial list of words if the user cancells the search
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         

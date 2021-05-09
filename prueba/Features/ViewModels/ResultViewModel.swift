@@ -56,6 +56,8 @@ class ResultViewModel {
         return WordFoundHeaderCellModel(wordTitle: "Palabra", documentTitle: "Documentos", appearancesTitle: "Apariciones")
     }
     
+    //MARK: - Generate cell models with manager's word dictionary
+    
     func generateCellModels() {
         
         for (_, wordModel) in manager.wordsFound {
@@ -68,11 +70,15 @@ class ResultViewModel {
         
     }
     
+    //MARK: - Recover the initial list of words
+    
     func recoverTotalCellModels() {
         
         cellModels = totalWordsCellModels
         
     }
+    
+    //MARK: - Sort the word models by position
     
     func refreshPositionFilteredCellModels() {
         
@@ -80,17 +86,23 @@ class ResultViewModel {
         
     }
     
+    //MARK: - Sort the word models alphabetically
+    
     func refreshAlphabeticFilteredCellModels() {
         
         cellModels = cellModels.sorted(by: {$0.word < $1.word })
         
     }
     
+    //MARK: - Sort the word models by number of appearances
+    
     func refreshAppearancesFilteredCellModels() {
         
         cellModels = cellModels.sorted(by: {$0.appearances > $1.appearances })
         
     }
+    
+    //MARK: - Get cell model from the specified index
     
     func getCellModel(atIndex index: Int)-> WordFoundDescriptionCellModel? {
         
@@ -99,6 +111,8 @@ class ResultViewModel {
         return cellModels[index]
         
     }
+    
+    //MARK: - Create a new array of cellModels filtering the words from the manager's dictionary by the text introduced by the user in the searchBar
     
     func createCellModels(withFilteredWords text: String) {
         
